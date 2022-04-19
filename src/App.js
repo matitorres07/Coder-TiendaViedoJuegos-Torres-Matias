@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
+import Saludo from './components/Saludo';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-    <h1 className="text-3xl font-bold underline">Primera app con react!</h1>
+    
+    <ItemListContainer name = 'tienda' producto='juegos'></ItemListContainer>
     </div>
   );
 }
