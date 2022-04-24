@@ -1,5 +1,6 @@
 import React from 'react'
 import CartWidget from './CartWidget'
+import Contador from '../componentespractica/Contador'
 
 const NavBar = () => {
   const estilos ={

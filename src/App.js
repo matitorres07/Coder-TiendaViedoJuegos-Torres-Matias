@@ -1,15 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import Saludo from './components/Saludo';
+import Saludo from './componentespractica/Saludo';
 import ItemListContainer from './components/ItemListContainer';
+import Prueba1 from './componentespractica/Prueba1';
+import Contador from './componentespractica/Contador';
+import ItemCount from './components/ItemCount';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-    
-    <ItemListContainer name = 'tienda' producto='juegos'></ItemListContainer>
+      <ItemCount></ItemCount>
     </div>
   );
 }
