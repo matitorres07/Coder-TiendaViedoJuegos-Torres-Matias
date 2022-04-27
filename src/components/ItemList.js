@@ -14,7 +14,8 @@ const ItemList = () => {
     }, 2000);
   });
 
-  
+  //esta funcion la tome del codigo que compartieron de joshuacba08 me parecio mas pro y mejor radactada que la que hicimos
+  // en clase (se puede ver en componentes practica en el componente countriescontainer.js)
   const getProductsFromDB = async () => {
     try {
       const result = await getProducts;
