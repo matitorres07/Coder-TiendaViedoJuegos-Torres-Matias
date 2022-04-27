@@ -1,10 +1,15 @@
-const ItemListContainer = ({name,producto}) => {
+import React from 'react';
+import ItemList from './ItemList';
+import './styles/titulo.css';
+
+const ItemListContainer = () => {
   return (
-    <div>
-        <h1 className="text-4xl font-bold" style={{color:'red'}}>
-        Hola este es el contenedor de la {name} , aqui van a ir todos los {producto} disponibles!
-    </h1>
-    </div>
-  )
-}
-export default ItemListContainer
+    <section >
+      <h1 className='nada'>Nuestros productos</h1>
+
+      <ItemList />
+    </section>
+  );
+};
+
+export default ItemListContainer;

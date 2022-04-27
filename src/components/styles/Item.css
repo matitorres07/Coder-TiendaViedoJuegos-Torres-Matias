@@ -1,0 +1,21 @@
+.container1{
+    justify-content: center;
+}
+.product-card {
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  .product-card__image {
+    
+    
+    width:  320px;
+    height: 320px;
+    object-fit: cover;
+  }
+  
+  .product-card__name {
+    font-size: 1.6rem;
+  }
+  

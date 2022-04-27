@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useEffect } from "react"
+import { productList } from '../data/data.js';
 
-let stock = 10
-const ItemCount = () => {
+const ItemCount = ({ initial, stock, onAdd }) => {
     const [count, setCount] = useState(1)
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const ItemCount = () => {
    , [count])
    
   const addHandler = () =>{
-      if (count < 10) {
+      if (count < stock) {
     setCount(count + 1)
       }
   }
@@ -23,11 +23,7 @@ const ItemCount = () => {
 
   return (
     <>
-    <div class="card card-compact w-96 bg-base-100 shadow-xl ">
-    <figure><img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/12a0ed7c6bc09b73d6558c6f69ed7f5f.png" alt="Shoes" /></figure>
-    <div class="card-body">
-    <h2 class="card-title">Minecraft</h2>
-    <p>Cuantas unidades deseas comprar?</p>
+
     <div class="card-actions justify-center ">
       
       <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onClick={resHandler}>-</button>
@@ -36,12 +32,11 @@ const ItemCount = () => {
 
     </div>
     <div>
-    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+    <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={() => onAdd(count)}>
   Agregar al carrito
 </button>
     </div>
-    </div>
-    </div>
+
 
     </>
   )
