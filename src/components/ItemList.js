@@ -14,8 +14,7 @@ const ItemList = () => {
     }, 2000);
   });
 
-  //esta funcion la tome del codigo que compartieron de joshuacba08 me parecio mas pro y mejor radactada que la que hicimos
-  // en clase (se puede ver en componentes practica en el componente countriescontainer.js)
+ //Entrega al '02/05
   const getProductsFromDB = async () => {
     try {
       const result = await getProducts;
@@ -32,7 +31,7 @@ const ItemList = () => {
   }, []); 
 
   return (
-    <div className="flex justify-center product-list-container">
+    <div className="grid grid-cols-4 gap-4">
       {
         
         products.length ? ( 
@@ -42,7 +41,7 @@ const ItemList = () => {
               products.map((product) => {
                 
                 return (
-                  <div key={product.id} className="flex justify-center grid-cols-3">
+                  <div key={product.id} className="flex justify-center grid-cols-4">
                     <Item
                       name={product.name}
                       thumbnail={product.thumbnail}

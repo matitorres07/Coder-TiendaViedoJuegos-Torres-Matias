@@ -4,11 +4,10 @@ import './styles/titulo.css';
 
 const ItemListContainer = () => {
   return (
-    <section >
-      <h1 className='nada'>Nuestros productos</h1>
-
+    <div >
+      <h3 className='nada'>Nuestros productos</h3>
       <ItemList />
-    </section>
+    </div>
   );
 };
 

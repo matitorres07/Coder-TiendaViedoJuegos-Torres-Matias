@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { productList } from '../data/data.js';
+import './styles/ItemCount.css';
+
 
 const ItemCount = ({ initial, stock, onAdd }) => {
     const [count, setCount] = useState(1)
@@ -24,17 +26,20 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   return (
     <>
 
-    <div class="card-actions justify-center ">
+    <div className="card-actions justify-center ">
       
-      <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onClick={resHandler}>-</button>
+      <button className="btn btn-errr" onClick={resHandler}>-</button>
       <strong>{count}</strong>
-    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onClick={addHandler}>+</button>
+    <button className="btn btn-active btn-accen" onClick={addHandler}>+</button>
 
     </div>
     <div>
-    <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={() => onAdd(count)}>
-  Agregar al carrito
-</button>
+      <div className="btn-comprar">
+      <button className="btn btn-primary" onClick={() => onAdd(count)}>
+          Agregar al carrito
+      </button>
+      </div>
+
     </div>
 
 

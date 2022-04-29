@@ -8,13 +8,16 @@ import Contador from './componentespractica/Contador';
 import ItemCount from './components/ItemCount';
 import CountriesContainer from './componentespractica/CountriesContainer';
 import Item from './components/Item';
+import StarshipContainer from './componentespractica/swapi/StarshipContainer';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url("https://i.imgur.com/Kx7N0dG.png")` }}>
+      
       <NavBar/>
       <ItemListContainer></ItemListContainer>
-
+      <Footer/>
 
     </div>
   );
