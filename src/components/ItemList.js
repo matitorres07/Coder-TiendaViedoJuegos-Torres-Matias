@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Item from './Item';
 import { productList } from '../data/data.js';
-
+import './styles/ItemList.css';
 
 const ItemList = () => {
  
@@ -55,7 +55,7 @@ const ItemList = () => {
             }
           </>
         ) : (
-          <img className='' src="https://c.tenor.com/tEBoZu1ISJ8AAAAC/spinning-loading.gif" />
+          <img className='loader' src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg" />
         ) 
       }
     </div>
