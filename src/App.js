@@ -10,6 +10,8 @@ import CountriesContainer from './componentespractica/CountriesContainer';
 import Item from './components/Item';
 import StarshipContainer from './componentespractica/swapi/StarshipContainer';
 import Footer from './components/Footer';
+import Popup from './componentespractica/Popup';
+
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
       <NavBar/>
       <ItemListContainer></ItemListContainer>
       <Footer/>
-
+    
     </div>
   );
 }
