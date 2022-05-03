@@ -1,0 +1,15 @@
+.imagen-detalle {
+    width:  50vh;
+    height:  50vh;
+    object-fit: cover;
+}
+.detalles {
+    justify-content: end;
+}
+
+.loader {
+    
+    height:  20vh;
+    margin-left: 92vh;
+
+}

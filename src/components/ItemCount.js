@@ -35,23 +35,12 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     </div>
     <div>
       <div className="btn-comprar">
+
       <button className="btn btn-primary" onClick={() => onAdd(count)}>
           Agregar al carrito
       </button>
-  
-      <label for="my-modal" class="btn modal-button">open modal</label>
-
-
-      <input type="checkbox" id="my-modal" class="modal-toggle"/>
-      <div class="modal">
-        <div class="modal-box">
-          <h3 class="font-bold text-lg">{count}</h3>
-          <p class="py-4">placeholder</p>
-          <div class="modal-action">
-            <label for="my-modal" class="btn">Yay!</label>
-          </div>
-        </div>
-      </div>
+      
+   
       </div>
 
     </div>

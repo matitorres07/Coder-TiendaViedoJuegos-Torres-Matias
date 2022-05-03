@@ -11,7 +11,7 @@ const ItemList = () => {
   const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(productList);
-    }, 2000);
+    }, 1000);
   });
 
  //Entrega al '02/05
@@ -30,6 +30,7 @@ const ItemList = () => {
     getProductsFromDB();
   }, []); 
 
+  
   return (
     <div className="grid grid-cols-4 gap-4">
       {
@@ -55,7 +56,7 @@ const ItemList = () => {
             }
           </>
         ) : (
-          <img className='loader' src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg" />
+          <img className='loader'  src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg" />
         ) 
       }
     </div>

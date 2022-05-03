@@ -1,6 +1,8 @@
 import React from 'react'
 import CartWidget from './CartWidget'
 import Contador from '../componentespractica/Contador'
+import { Link } from 'react-router-dom'
+
 
 const NavBar = () => {
   const estilos ={
@@ -13,19 +15,19 @@ const NavBar = () => {
   <img src="https://cdn-icons-png.flaticon.com/512/3408/3408506.png" alt="" className="object-scale-down h-30 w-11 ..."/>
   <div className="flex-row">
     <ul className="menu menu-horizontal p-0">
-      <li><a>Tienda</a></li>
+      <li><Link to={'/'}>Inicio</Link></li>
       <li tabindex="0">
         <a>
           Consolas
           <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
         </a>
         <ul className="p-2 bg-base-100">
-          <li><a>PS4</a></li>
-          <li><a>XBOX</a></li>
-          <li><a>SWITCH</a></li>
+          <li><Link to={'/consolas/PS4'}>PS4</Link></li>
+          <li><Link to={'/consolas/SWITCH'}>SWITCH</Link></li>
+          <li><Link to={'/consolas/XBOX'}>XBOX</Link></li>
         </ul>
       </li>
-      <li><a>Nosotros</a></li>
+      <li><Link to={'nosotros'}>Nosotros</Link></li>
     </ul>
   </div>
   </div>

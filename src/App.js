@@ -10,14 +10,35 @@ import CountriesContainer from './componentespractica/CountriesContainer';
 import Item from './components/Item';
 import StarshipContainer from './componentespractica/swapi/StarshipContainer';
 import Footer from './components/Footer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Nosotros from './components/Nosotros';
+import ItemDetail from './components/ItemDetail';
+import ItemsCategory from './components/ItemsCategory';
+import ItemsCategoryContainer from './components/ItemsCategoryContainer';
+
+var rootStyle = {
+  height: '100vh',
+  
+  
+}
 
 function App() {
   return (
-    <div className="App" style={{backgroundImage: `url("https://i.imgur.com/Kx7N0dG.png")` }}>
+    <div className="App" style={{backgroundImage: `url("https://i.imgur.com/Kx7N0dG.png")` ,minheight: '100vh'}}>
+      <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element = {<ItemListContainer/>}/>
+          <Route path='/nosotros' element = {<Nosotros/>}/>
+          <Route path='/categorias/:categoria' element = {<ItemsCategory/>}/>
+          <Route path='/consolas/:consola' element = {<ItemsCategoryContainer/>}/>
+          <Route path='/datalles/:id' element = {<ItemDetail/>}/>
+        </Routes>
+        <Footer/>
+      </BrowserRouter>
       
-      <NavBar/>
-      <ItemListContainer></ItemListContainer>
-      <Footer/>
+      
+      
 
     </div>
   );
