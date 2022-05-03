@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount.js';
 
 import './styles/Item.css';
@@ -16,11 +17,20 @@ const Item = ({ name, thumbnail, price, id, stock }) => {
       
 
       <h3 className="card-title">{name}</h3>
-      <p>Aca iria una descricion del juego que voy a ir agregando mas adelante!</p>
+      <p>Aca iria una descricion del juego que voy a ir agregando mas adelante!
+      <Link to={`/datalles/${id}`} className="btn btn-link" >
+          Ver mas!
+      </Link>
+   
+      </p>
+      
       <span className="product-card__name">${price}</span>
+      
       <span className="">Stock : {stock}</span>
       <div style={{margin : '10px'}}>
+        
       <ItemCount stock={stock} onAdd={onAdd} initial={1} />
+      
       </div>
       
     </div>
