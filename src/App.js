@@ -15,6 +15,8 @@ import Nosotros from './components/Nosotros';
 import ItemDetail from './components/ItemDetail';
 import ItemsCategory from './components/ItemsCategory';
 import ItemsCategoryContainer from './components/ItemsCategoryContainer';
+import NoVocals from './componentespractica/NoVocals';
+import Cart from './components/Cart';
 
 var rootStyle = {
   height: '100vh',
@@ -33,8 +35,12 @@ function App() {
           <Route path='/categorias/:categoria' element = {<ItemsCategory/>}/>
           <Route path='/consolas/:consola' element = {<ItemsCategoryContainer/>}/>
           <Route path='/datalles/:id' element = {<ItemDetail/>}/>
+          <Route path='/cart' element = {<Cart/>}/>
         </Routes>
+        
         <Footer/>
+
+        
       </BrowserRouter>
       
       

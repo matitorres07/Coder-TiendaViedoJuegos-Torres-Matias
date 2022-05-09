@@ -24,14 +24,10 @@ const Item = ({ name, thumbnail, price, id, stock }) => {
    
       </p>
       
-      <span className="product-card__name">${price}</span>
+      <span className="product-card__name">Precio : ${price}</span>
       
       <span className="">Stock : {stock}</span>
-      <div style={{margin : '10px'}}>
-        
-      <ItemCount stock={stock} onAdd={onAdd} initial={1} />
       
-      </div>
       
     </div>
 

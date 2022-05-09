@@ -3,13 +3,17 @@ import { useParams } from "react-router-dom"
 import { productList } from '../data/data.js';
 import './styles/ItemDeatail.css';
 import ItemCount from './ItemCount.js';
-
+import { Link } from 'react-router-dom';
 const ItemDetail = () => {
   const  {id} = useParams( )
   const [juego, setJuego] = useState({})
 
-  
+  const [terminar,setTerminar] = useState(false)
 
+  const onAdd = (count) => {
+    setTerminar (true)
+    alert(`Has agregado ${count} Juegos`);
+  };
 
   const getJuegos = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -36,9 +40,7 @@ const ItemDetail = () => {
   }, []); 
 
 
-  const onAdd = (count) => {
-    alert(`Has agregado ${count} Juegos`);
-  };
+
 
   return (
     <div>
@@ -72,7 +74,19 @@ const ItemDetail = () => {
               <div class="card-actions justify-center">
                 <h1>Comprar ahora!</h1>
               </div>
-              <ItemCount stock={juego.stock} onAdd={onAdd} initial={1} />
+              {
+                terminar ? (
+                  <div><strong>Compra realizada : </strong> 
+                        <Link to={`/cart`} className="btn btn-link" >
+                          Finalizar Compra
+                        </Link>
+                  </div>
+                ) : (
+                  <ItemCount stock={juego.stock} onAdd={onAdd} initial={1} />
+
+                )
+              }
+              
             </div>
           </div>
           </div>
