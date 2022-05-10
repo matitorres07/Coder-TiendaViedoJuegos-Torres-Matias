@@ -12,7 +12,7 @@ const ItemDetail = () => {
 
   const onAdd = (count) => {
     setTerminar (true)
-    alert(`Has agregado ${count} Juegos`);
+    //alert(`Has agregado ${count} Juegos`);
   };
 
   const getJuegos = new Promise((resolve, reject) => {
@@ -57,11 +57,11 @@ const ItemDetail = () => {
           </>
         ) : (
           <div>
-          <div class="card lg:card-side bg-base-100 shadow-xl">
+          <div className="card lg:card-side bg-base-100 shadow-xl">
             <figure><img className="imagen-detalle" src={juego.thumbnail}/></figure>
-            <div class="card-body">
+            <div className="card-body">
               
-              <h2 class="card-title">{juego.name}</h2>
+              <h2 className="card-title">{juego.name}</h2>
               <div>
               <p>{juego.descripcion}</p>
               </div>
@@ -71,18 +71,19 @@ const ItemDetail = () => {
               <li>Plataforma : {juego.consola}</li>
               </div>
            
-              <div class="card-actions justify-center">
+              <div className="card-actions justify-center">
                 <h1>Comprar ahora!</h1>
+       
               </div>
               {
                 terminar ? (
                   <div><strong>Compra realizada : </strong> 
                         <Link to={`/cart`} className="btn btn-link" >
-                          Finalizar Compra
+                          Visitar el carrito
                         </Link>
                   </div>
                 ) : (
-                  <ItemCount stock={juego.stock} onAdd={onAdd} initial={1} />
+                  <ItemCount stock={juego.stock} onAdd={onAdd} initial={1} id = {id}/>
 
                 )
               }
@@ -90,6 +91,7 @@ const ItemDetail = () => {
             </div>
           </div>
           </div>
+          
         ) 
       }
     </div>

@@ -1,14 +1,19 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import { productList } from '../data/data.js';
+import { useAppContext } from "./context/AppContext.jsx";
+import { useCartContext } from "./context/CartContext.jsx";
 import './styles/ItemCount.css';
 
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial, stock, onAdd, id }) => {
     const [count, setCount] = useState(1)
 
+    const {addToCart} = useCartContext()
+    const {products} = useAppContext()
+
   useEffect(() => {
-    console.log("cambio el componenete");
+    
      }
    , [count])
    
@@ -23,6 +28,18 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     }
   }
 
+  const handleClick = (id, cantidad) => {
+		const findProduct = products.find((producto) => producto.id === id)
+
+		if (!findProduct) {
+			alert("Error")
+			return
+		}
+
+		addToCart(findProduct, cantidad)
+		onAdd(count)
+	}
+
   return (
     <>
 
@@ -36,10 +53,9 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     <div>
       <div className="btn-comprar">
 
-      <button className="btn btn-primary" onClick={() => onAdd(count)}>
+      <button className="btn btn-primary" onClick={() => handleClick(id,count)}>
           Agregar al carrito
       </button>
-      
    
       </div>
 

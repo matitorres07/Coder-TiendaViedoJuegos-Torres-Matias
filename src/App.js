@@ -17,36 +17,46 @@ import ItemsCategory from './components/ItemsCategory';
 import ItemsCategoryContainer from './components/ItemsCategoryContainer';
 import NoVocals from './componentespractica/NoVocals';
 import Cart from './components/Cart';
+import CartContextProvider from './components/context/CartContext';
+import AppContextProvider from './components/context/AppContext';
 
-var rootStyle = {
-  height: '100vh',
-  
-  
-}
 
 function App() {
   return (
-    <div className="App" style={{backgroundImage: `url("https://i.imgur.com/Kx7N0dG.png")` ,minheight: '100vh'}}>
-      <BrowserRouter>
+    <div className="App" style={{backgroundImage: `url("https://i.imgur.com/Kx7N0dG.png")` ,minHeight: '93vh'}}>
+    <AppContextProvider>
+      <CartContextProvider >
+        <BrowserRouter >
         <NavBar/>
-        <Routes>
-          <Route path='/' element = {<ItemListContainer/>}/>
-          <Route path='/nosotros' element = {<Nosotros/>}/>
-          <Route path='/categorias/:categoria' element = {<ItemsCategory/>}/>
-          <Route path='/consolas/:consola' element = {<ItemsCategoryContainer/>}/>
-          <Route path='/datalles/:id' element = {<ItemDetail/>}/>
-          <Route path='/cart' element = {<Cart/>}/>
-        </Routes>
+          <Routes>
+            <Route path='/' element = {<ItemListContainer/>}/>
+            <Route path='/nosotros' element = {<Nosotros/>}/>
+            <Route path='/categorias/:categoria' element = {<ItemsCategory/>}/>
+            <Route path='/consolas/:consola' element = {<ItemsCategoryContainer/>}/>
+            <Route path='/datalles/:id' element = {<ItemDetail/>}/>
+            <Route path='/cart' element = {<Cart/>}/>
+          </Routes>
         
-        <Footer/>
+        
 
         
       </BrowserRouter>
+
+
+      </CartContextProvider>
+
+    </AppContextProvider>
+      
+
+    </div>
+      
+
+
       
       
       
 
-    </div>
+
   );
 }
 
