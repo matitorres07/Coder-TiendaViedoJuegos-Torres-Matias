@@ -1,23 +1,40 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useCartContext } from "./context/CartContext.jsx";
 
 
+import './styles/carrito.css';
 
 const Cart = () => {
   const {cart} = useCartContext()
+  const {deleteFromCart} = useCartContext()
   const [contrador2, setcontrador2] = useState(0)
 
   const estoImprime = () => {
     console.log('esete es el carrito ',cart);
   }
 
+
   useEffect(() => {
     setcontrador2 (cart.reduce((a,v) =>  a = a + v.quantity , 0 ))
   }, [{contrador2}]); 
   console.log(contrador2);
-  
+
+
+  const borrarDelCarrito = (id) => {
+		const findProduct = cart.find((producto) => producto.id === id)
+    console.log('Este es el producto a borrar',id);
+		if (!1) {
+			alert("Error")
+			return
+		}
+
+		deleteFromCart(id)
+
+	}
+
   return (
-  
+    cart.length ? (
 <div className="bg-gray-100">
   <div className="container mx-auto mt-10">
     <div className="flex shadow-md my-10">
@@ -34,7 +51,7 @@ const Cart = () => {
         </div>
         <div>
       <>
-      {cart.map(({ quantity, name,price,thumbnail }) => (
+      {cart.map(({id, quantity, name,price,thumbnail }) => (
         <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
         <div className="flex w-2/5"> 
           <div className="w-20">
@@ -42,8 +59,9 @@ const Cart = () => {
           </div>
           <div className="flex flex-col justify-between ml-4 flex-grow">
             <span className="font-bold text-sm">{name}</span>
+
             
-            <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+            <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs" onClick={() => borrarDelCarrito(id)}>Borrar</a>
           </div>
         </div>
         <div className="flex justify-center w-1/5">
@@ -105,6 +123,20 @@ const Cart = () => {
   </div>
 </div>
 
-  )
+  ):
+  (
+    <div className="flex flex-col ...">
+    <div className="divcarrito">
+      <h1>Tu carrito esta vacio!</h1>
+    </div>
+    <div className="flex items-center ... justify-center ...">
+    <img className=''  src="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png" />
+    
+    <Link to={'/'}><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Empezar a comprar!</button></Link>
+    </div>
+    
+    </div>
+    
+))
 }
 export default Cart

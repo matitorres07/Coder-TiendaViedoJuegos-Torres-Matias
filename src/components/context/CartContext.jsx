@@ -30,21 +30,25 @@ const CartContextProvider = ({ children }) => {
 		setCart([...newCart, producto])
 	}
 
-	const deleteFromCart = (producto) => {
+	const deleteFromCart = (id) => {
 		const newCart = [...cart]
 
-		const productIsInCart = isInCart(producto.id)
+		const productIsInCart = isInCart(id)
 
 		if (!productIsInCart) {
 			return
 		}
 
-		const deleteProduct = newCart.filter((prod) => prod.id !== producto.id)
+		const deleteProduct = newCart.filter((prod) => prod.id !== id)
 
 		setCart(deleteProduct)
 	}
 
 	const deleteCart = () => setCart([])
+
+	const prueba = () => {
+		console.log("probando si exporto ok");
+	}
 
 	console.log(cart)
 
@@ -56,6 +60,7 @@ const CartContextProvider = ({ children }) => {
 				deleteFromCart,
 				deleteCart,
 				setCart,
+				prueba
 			}}
 		>
 			{children}
