@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Item from './Item';
 import { productList } from '../data/data.js';
 import './styles/ItemList.css';
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+
 
 const ItemList = () => {
  
@@ -15,20 +17,26 @@ const ItemList = () => {
   });
 
  //Entrega al '02/05
-  const getProductsFromDB = async () => {
-    try {
-      const result = await getProducts;
-      setProducts(result);
-    } catch (error) {
-      console.log(error);
-      alert('No podemos mostrar los productos en este momento');
-    }
-  };
+
 
  
   useEffect(() => {
-    getProductsFromDB();
+    setTimeout(() => {
+      const db = getFirestore()
+    const itemsCollection = collection(db,'items')
+    getDocs (itemsCollection).then(snapshot => { 
+        const productList = []
+       snapshot.docs.forEach(s=> { 
+           //console.log(s.data());
+           productList.push({id : s.id,...s.data()})
+       })
+       console.log(productList);
+       setProducts(productList) 
+     })
+    }, 1000);
+    
   }, []); 
+  
 
   
   return (

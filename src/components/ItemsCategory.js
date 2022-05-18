@@ -5,6 +5,7 @@ import './styles/ItemDeatail.css';
 import ItemCount from './ItemCount.js';
 import Item from "./Item.js";
 import './styles/ItemCategory.css';
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemDetail = () => {
   const  {consola} = useParams( )
@@ -16,10 +17,10 @@ const ItemDetail = () => {
   const getJuegos = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(productList);
-    }, 500);
+    }, 3000);
   });
 
-
+{/*
   const getJuegosFromDB = async () => {
     try {
       const result = await getJuegos;
@@ -30,11 +31,25 @@ const ItemDetail = () => {
       alert('No podemos mostrar los productos en este momento');
     }
   };
-
-  //result.find  (m => m.id == id)
+*/}
 
   useEffect(() => {
-    getJuegosFromDB();
+
+    setTimeout(() => {
+      const db = getFirestore()
+    const itemsCollection = collection(db,'items')
+    getDocs (itemsCollection).then(snapshot => { 
+        const productList = []
+       snapshot.docs.forEach(s=> { 
+           //console.log(s.data());
+           productList.push({id : s.id,...s.data()})
+       })
+       //console.log(productList);
+       setjuegosCons (productList.filter  (m => m.consola == consola))
+     })
+    }, 1100);
+    
+    
   }, [consola]); 
 
 

@@ -1,4 +1,5 @@
-.container1{
+	
+	.container1{
     justify-content: center;
 }
 .product-card {
@@ -19,4 +20,3 @@
   .product-card__name {
     font-size: 1.6rem;
   }
-  

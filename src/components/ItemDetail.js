@@ -4,6 +4,8 @@ import { productList } from '../data/data.js';
 import './styles/ItemDeatail.css';
 import ItemCount from './ItemCount.js';
 import { Link } from 'react-router-dom';
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
 const ItemDetail = () => {
   const  {id} = useParams( )
   const [juego, setJuego] = useState({})
@@ -15,28 +17,19 @@ const ItemDetail = () => {
     //alert(`Has agregado ${count} Juegos`);
   };
 
-  const getJuegos = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productList);
-    }, 1000);
-  });
-
-
-  const getJuegosFromDB = async () => {
-    try {
-      const result = await getJuegos;
-      setJuego (result.find  (m => m.id == id))
-      
-    } catch (error) {
-      console.log(error);
-      alert('No podemos mostrar los productos en este momento');
-    }
-  };
 
   //result.find  (m => m.id == id)
 
   useEffect(() => {
-    getJuegosFromDB();
+    const db = getFirestore()
+    const juego1 = doc(db,'items',id)
+    getDoc (juego1).then(res => {
+        if(res.exists()){
+            //console.log(res.data());
+            setJuego(res.data())
+            
+        }
+    })
   }, []); 
 
 

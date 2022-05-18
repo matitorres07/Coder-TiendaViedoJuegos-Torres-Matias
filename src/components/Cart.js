@@ -25,7 +25,7 @@ const Cart = () => {
 		const findProduct = cart.find((producto) => producto.id === id)
     console.log('Este es el producto a borrar',id);
 		if (!1) {
-			alert("Error")
+			alert("Error aca!")
 			return
 		}
 

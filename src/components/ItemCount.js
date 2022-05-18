@@ -12,10 +12,7 @@ const ItemCount = ({ initial, stock, onAdd, id }) => {
     const {addToCart} = useCartContext()
     const {products} = useAppContext()
 
-  useEffect(() => {
-    
-     }
-   , [count])
+
    
   const addHandler = () =>{
       if (count < stock) {
@@ -32,7 +29,7 @@ const ItemCount = ({ initial, stock, onAdd, id }) => {
 		const findProduct = products.find((producto) => producto.id === id)
 
 		if (!findProduct) {
-			alert("Error")
+			alert("Error aqui")
 			return
 		}
 

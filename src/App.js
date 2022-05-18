@@ -19,6 +19,7 @@ import NoVocals from './componentespractica/NoVocals';
 import Cart from './components/Cart';
 import CartContextProvider from './components/context/CartContext';
 import AppContextProvider from './components/context/AppContext';
+import ProductDetail from './components/firebase-examples/ProductDetail';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path='/consolas/:consola' element = {<ItemsCategoryContainer/>}/>
             <Route path='/datalles/:id' element = {<ItemDetail/>}/>
             <Route path='/cart' element = {<Cart/>}/>
+            <Route path='/producto' element = {<ProductDetail/>}/>
           </Routes>
         
         
