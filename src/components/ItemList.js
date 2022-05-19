@@ -3,18 +3,15 @@ import Item from './Item';
 import { productList } from '../data/data.js';
 import './styles/ItemList.css';
 import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { useAppContext } from './context/AppContext';
+
 
 
 const ItemList = () => {
  
   const [products, setProducts] = useState([]);
 
- 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(productList);
-    }, 1000);
-  });
+  const {products1} = useAppContext()
 
  //Entrega al '02/05
 
@@ -30,10 +27,11 @@ const ItemList = () => {
            //console.log(s.data());
            productList.push({id : s.id,...s.data()})
        })
-       console.log(productList);
+       
        setProducts(productList) 
      })
     }, 1000);
+    
     
   }, []); 
   

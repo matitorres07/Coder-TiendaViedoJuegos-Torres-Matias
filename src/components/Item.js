@@ -10,27 +10,38 @@ const Item = ({ name, thumbnail, price, id, stock }) => {
   };
 
   return (
-    <div className="card w-96 bg-base-100 shadow-xl" style={{ padding : '20px'}}>
+    <body>
       
-    <figure><img className="product-card__image" src={thumbnail}  alt="Shoes" /></figure>
-    
+    <div className='container'>
+      <div className='card'>
+        <div className='face face1'>
+          <div className='content'>
+            <img className='' src={thumbnail} ></img>
+            <h3>{name}</h3>
+          </div>
+        </div>
+        <div className='face face2'>
+          <div className='content'>
+          <div className='text_holder_2'>
+          <span className="product-card__name">Precio : ${price}</span>
 
-    <h3 className="card-title">{name}</h3>
-    <p>Aca iria una descricion del juego que voy a ir agregando mas adelante!
-    <Link to={`/datalles/${id}`} className="btn btn-link" >
-        Ver mas!
-    </Link>
- 
-    </p>
-    
-    <span className="product-card__name">Precio : ${price}</span>
-    
-    <span className="">Stock : {stock}</span>
-    
-    
-  </div>
+          <span className="" >Stock : {stock}</span>
+          <Link to={`/datalles/${id}`} className="btn btn-link" >
+              Ver mas!
+          </Link>
+          </div>
 
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+
+  </body>
   );
 };
 
 export default Item;
+
+

@@ -7,7 +7,7 @@ export const useAppContext = () => useContext(AppContext)
 const AppContextProvider = ({children}) => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-    const db = getFirestore()
+         const db = getFirestore()
     const itemsCollection = collection(db,'items')
     getDocs (itemsCollection).then(snapshot => { 
         const productList = []
@@ -15,11 +15,12 @@ const AppContextProvider = ({children}) => {
            //console.log(s.data());
            productList.push({id : s.id,...s.data()})
        })
-       console.log(productList);
+       
        setProducts(productList) 
+       
      })
-
-    })
+     console.log('asd',products);
+    },[])
   return <AppContext.Provider value = {{products}}>{children}</AppContext.Provider>
 }
 export default AppContextProvider

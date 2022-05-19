@@ -2,7 +2,7 @@ import React from 'react'
 import CartWidget from './CartWidget'
 import Contador from '../componentespractica/Contador'
 import { Link } from 'react-router-dom'
-
+import './styles/Item.css';
 
 const NavBar = () => {
   const estilos ={
