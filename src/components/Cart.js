@@ -60,8 +60,8 @@ const Cart = () => {
           <div className="flex flex-col justify-between ml-4 flex-grow">
             <span className="font-bold text-sm">{name}</span>
 
+            <button class="btn btn-xs btn-error " onClick={() => borrarDelCarrito(id)}>Eliminar</button>
             
-            <a href="#" className="font-semibold hover:text-red-500 text-gray-500 text-xs" onClick={() => borrarDelCarrito(id)}>Borrar</a>
           </div>
         </div>
         <div className="flex justify-center w-1/5">

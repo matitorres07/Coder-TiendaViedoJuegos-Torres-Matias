@@ -76,6 +76,7 @@ const ItemDetail = () => {
                       price={juegosCons.price}
                       stock={juegosCons.stock}
                       id={juegosCons.id}
+                      tub2={juegosCons.tub2}
                     />
                   </div>
                 );
