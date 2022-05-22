@@ -4,6 +4,8 @@ import { productList } from '../data/data.js';
 import './styles/ItemList.css';
 import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import { useAppContext } from './context/AppContext';
+import NavBar from './NavBar';
+import Footer from './Footer';
 
 
 
@@ -30,7 +32,7 @@ const ItemList = () => {
        
        setProducts(productList) 
      })
-    }, 1000);
+    }, 2000);
     
     
   }, []); 
@@ -38,17 +40,21 @@ const ItemList = () => {
 
   
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div>
+      <NavBar></NavBar>
+      <div className="asd2">
       {
         
         products.length ? ( 
+          <div className='grid grid-cols-5 gap-4'>
           <>
             {
               
               products.map((product) => {
                 
                 return (
-                  <div key={product.id} className="flex justify-center grid-cols-4">
+                    
+                  <div key={product.id} className="grid justify-center grid-cols-6">
                     <Item
                       name={product.name}
                       thumbnail={product.thumbnail}
@@ -62,12 +68,13 @@ const ItemList = () => {
               })
             }
           </>
+          </div>
         ) : (
-          <img className='loader'  src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg" />
+          <img className=''  src="https://pa1.narvii.com/7878/a30ff749e4268e8f8bdb196bc7a659cc8b340d9cr1-480-480_hq.gif" />
         ) 
       }
     </div>
+    </div>
   );
 };
-
 export default ItemList;

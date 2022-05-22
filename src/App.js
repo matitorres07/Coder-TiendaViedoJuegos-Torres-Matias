@@ -20,23 +20,27 @@ import Cart from './components/Cart';
 import CartContextProvider from './components/context/CartContext';
 import AppContextProvider from './components/context/AppContext';
 import ProductDetail from './components/firebase-examples/ProductDetail';
+import Home from './components/Home';
+import Orden from './componentespractica/Orden';
 
 
 function App() {
   return (
-    <div className="App" style={{backgroundImage: `url("https://i.imgur.com/Kx7N0dG.png")` ,minHeight: '93vh'}}>
+    <div className="App" style={{backgroundImage: `url("https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg") `,backgroundSize: 'cover',resizeMode: 'contain',minHeight: '120vh'}}>
     <AppContextProvider>
       <CartContextProvider >
         <BrowserRouter >
-        <NavBar/>
+        
           <Routes>
-            <Route path='/' element = {<ItemListContainer/>}/>
+            <Route path='/' element = {<Home/>}/>
+            <Route path='/juegos' element = {<ItemListContainer/>}/>
             <Route path='/nosotros' element = {<Nosotros/>}/>
             <Route path='/categorias/:categoria' element = {<ItemsCategory/>}/>
             <Route path='/consolas/:consola' element = {<ItemsCategoryContainer/>}/>
             <Route path='/datalles/:id' element = {<ItemDetail/>}/>
             <Route path='/cart' element = {<Cart/>}/>
             <Route path='/producto' element = {<ProductDetail/>}/>
+            <Route path='/salvar' element = {<Orden/>}/>
           </Routes>
         
         

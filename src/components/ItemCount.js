@@ -43,7 +43,7 @@ const ItemCount = ({ initial, stock, onAdd, id }) => {
     <div className="card-actions justify-center ">
       
       <button className="btn btn-errr" onClick={resHandler}>-</button>
-      <strong>{count}</strong>
+      <strong style={{color: 'white'}}>{count}</strong>
     <button className="btn btn-active btn-accen" onClick={addHandler}>+</button>
 
     </div>

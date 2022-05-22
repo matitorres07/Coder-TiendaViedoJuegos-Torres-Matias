@@ -6,6 +6,7 @@ import ItemCount from './ItemCount.js';
 import Item from "./Item.js";
 import './styles/ItemCategory.css';
 import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import NavBar from "./NavBar.js";
 
 const ItemDetail = () => {
   const  {consola} = useParams( )
@@ -58,7 +59,9 @@ const ItemDetail = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div>
+      <NavBar></NavBar>
+      <div className="grid grid-cols-4 gap-4">
       {
         
         juegosCons.length ? ( 
@@ -84,9 +87,10 @@ const ItemDetail = () => {
             }
           </>
         ) : (
-          <img className='loader'  src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg" />
+          <img className='loader2'  src="https://pa1.narvii.com/7878/a30ff749e4268e8f8bdb196bc7a659cc8b340d9cr1-480-480_hq.gif" />
         ) 
       }
+    </div>
     </div>
   );
 };

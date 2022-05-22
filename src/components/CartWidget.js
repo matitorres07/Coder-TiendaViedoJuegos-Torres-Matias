@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "./context/CartContext.jsx";
+import './styles/Item.css';
 
 const CartWidget = () => {
   const {cart} = useCartContext()
@@ -23,7 +24,7 @@ const CartWidget = () => {
         
       </div>
     </label>
-    <div tabIndex="0" className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
+    <div tabIndex="0" className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow menucarrito1">
       <div className="card-body">
         <span className="font-bold text-lg">Cantidad : {contrador} </span>
         <span className="text-info">Subtotal: {cart.reduce((sum, i) => (

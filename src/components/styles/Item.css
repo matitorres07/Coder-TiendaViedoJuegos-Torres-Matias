@@ -29,12 +29,14 @@
 }
 
 .container .card .face.face1 {
-  background: #333;
+  
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   transform-origin: bottom;
+  background: rgb(8, 8, 8);
+  opacity: 0.9 ;
 }
 .container .card .face.face1 img {
   width: 220px;
@@ -97,3 +99,25 @@ background: #0051ffa1;
   }
   
 
+.navs {
+  color: #fff;
+  position: relative;
+
+  z-index: 100;
+}
+
+.consola {
+  color: #fff;
+}
+.menuconsola {
+  background-color: rgba(0, 0, 0, 0.836);
+  
+}
+
+.carrito1 {
+  color: #fff;
+}
+.menucarrito1 {
+  background-color: rgba(0, 0, 0, 0.836);
+  
+}

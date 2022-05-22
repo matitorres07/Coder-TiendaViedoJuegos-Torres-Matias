@@ -5,6 +5,7 @@ import './styles/ItemDeatail.css';
 import ItemCount from './ItemCount.js';
 import { Link } from 'react-router-dom';
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+import NavBar from "./NavBar.js";
 
 const ItemDetail = () => {
   const  {id} = useParams( )
@@ -37,6 +38,8 @@ const ItemDetail = () => {
 
   return (
     <div>
+      <NavBar></NavBar>
+      <div>
       {
         
         Object.keys(juego).length === 0 ? ( 
@@ -44,7 +47,7 @@ const ItemDetail = () => {
             {
               
             
-              <img className='loader'  src="https://icon-library.com/images/loading-icon-transparent-background/loading-icon-transparent-background-12.jpg" />
+              <img className='loader'  src="https://pa1.narvii.com/7878/a30ff749e4268e8f8bdb196bc7a659cc8b340d9cr1-480-480_hq.gif" />
 
             }
           </>
@@ -52,25 +55,25 @@ const ItemDetail = () => {
           <div>
           <div className="card lg:card-side bg-base-100 shadow-xl">
             <figure><img className="imagen-detalle" src={juego.thumbnail}/></figure>
-            <div className="card-body">
+            <div className="card-body" style={{ backgroundImage: `url("https://c4.wallpaperflare.com/wallpaper/300/544/973/discord-wallpaper-thumb.jpg")` }}>
               
-              <h2 className="card-title">{juego.name}</h2>
+              <h2 className="card-title" style={{color: 'white'}}>{juego.name}</h2>
               <div>
-              <p>{juego.descripcion}</p>
+              <p style={{color: 'white'}}>{juego.descripcion}</p>
               </div>
               <div className="detalles">
-              <li>Pecio actual : {juego.price}</li>
-              <li>Cantidad en Stock : {juego.stock}</li>
-              <li>Plataforma : {juego.consola}</li>
+              <li style={{color: 'white'}}>Pecio actual : {juego.price}</li>
+              <li style={{color: 'white'}}>Cantidad en Stock : {juego.stock}</li>
+              <li style={{color: 'white'}}>Plataforma : {juego.consola}</li>
               </div>
            
               <div className="card-actions justify-center">
-                <h1>Comprar ahora!</h1>
+                <h1 style={{color: 'white'}}>Comprar ahora!</h1>
        
               </div>
               {
                 terminar ? (
-                  <div><strong>Compra realizada : </strong> 
+                  <div><strong style={{color: 'white'}}>Compra realizada : </strong> 
                         <Link to={`/cart`} className="btn btn-link" >
                           Visitar el carrito
                         </Link>
@@ -87,6 +90,7 @@ const ItemDetail = () => {
           
         ) 
       }
+    </div>
     </div>
   );
 };
