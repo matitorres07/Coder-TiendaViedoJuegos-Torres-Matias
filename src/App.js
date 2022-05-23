@@ -26,7 +26,7 @@ import Orden from './componentespractica/Orden';
 
 function App() {
   return (
-    <div className="App" style={{backgroundImage: `url("https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg") `,backgroundSize: 'cover',resizeMode: 'contain',minHeight: '120vh'}}>
+    <div className="App" style={{backgroundImage: `url("https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg") `,backgroundSize: 'cover',resizeMode: 'contain',minHeight: '120vh',background : 'black'}}>
     <AppContextProvider>
       <CartContextProvider >
         <BrowserRouter >

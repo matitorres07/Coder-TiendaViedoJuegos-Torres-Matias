@@ -100,10 +100,10 @@ const Cart = () => {
         
         cart.length ? (
       
-      <div className="bg-gray-100" style={{backgroundImage: `url("https://c4.wallpaperflare.com/wallpaper/300/544/973/discord-wallpaper-thumb.jpg")`}}>
+      <div className=" bg-gray-100" style={{backgroundImage: `url("https://c4.wallpaperflare.com/wallpaper/300/544/973/discord-wallpaper-thumb.jpg")`}}>
         <div className="container mx-auto mt-10">
-          <div className="flex shadow-md my-10 ">
-            <div className=" w-3/4 bg-white px-10 py-10 cart-div">
+          <div className="cardcarrito2 flex shadow-md my-10 ">
+            <div className="divacamb bg-white px-10 py-10 cart-div">
               <div className="flex justify-between border-b pb-8">
                 <h1 className="font-semibold text-2xl" style={{color : 'white'}}>Carrito de compras</h1>
                 <button class="btn btn-secondary" onClick={() => deleteCart()}>Vaciar carrito</button>
@@ -114,7 +114,8 @@ const Cart = () => {
                 <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center" style={{color : 'white'}}>Precio</h3>
                 <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center" style={{color : 'white'}}>Total</h3>
               </div>
-              <div>
+            <div>
+              
             <>
             {cart.map(({id, quantity, name,price,thumbnail }) => (
               <div className="flex items-center hover:bg-gray-300 -mx-8 px-6 py-5">
@@ -144,10 +145,12 @@ const Cart = () => {
             
       
             </div>
+
+            
             {/* 
            
             */}
-             <div id="summary" className="w-1/4 px-8 py-10">
+             <div id="summary" className="divacamb2 px-8 py-10">
               <h1 className="font-semibold text-2xl border-b pb-8" style={{color : 'white'}}>Resumen de la orden!</h1>
               <div className="flex justify-between mt-10 mb-5 flex-col ...">
                 <span className="font-semibold text-sm uppercase" style={{color : 'white'}}>Items en el carrito : {contrador2}</span>
@@ -214,13 +217,16 @@ const Cart = () => {
           </div>
         </div>
       </div>
+
+                      
+      
       
         ) : (
           <div className="flex flex-col ...">
               <div className="divcarrito">
                 <h1>Tu carrito esta vacio!</h1>
               </div>
-              <div className="flex items-center ... justify-center ...">
+              <div className="flex flex-col ... items-center ... justify-center ...">
               <img className=''  src="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png" />
               
               <Link to={'/'}><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Empezar a comprar!</button></Link>

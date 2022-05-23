@@ -7,3 +7,18 @@
   
     
 }
+
+@media (max-width: 600px) {
+    .cardsinddet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center   ;
+      margin-top: 30px;
+    }
+    .cardsind2det{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center   ;
+
+    }}

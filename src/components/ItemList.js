@@ -46,7 +46,7 @@ const ItemList = () => {
       {
         
         products.length ? ( 
-          <div className='grid grid-cols-5 gap-4'>
+          <div className='grid grid-cols-5 gap-4 cardsind'>
           <>
             {
               
@@ -54,7 +54,7 @@ const ItemList = () => {
                 
                 return (
                     
-                  <div key={product.id} className="grid justify-center grid-cols-6">
+                  <div key={product.id} className="grid justify-center grid-cols-6 cardsind2">
                     <Item
                       name={product.name}
                       thumbnail={product.thumbnail}

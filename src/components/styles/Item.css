@@ -121,3 +121,13 @@ background: #0051ffa1;
   background-color: rgba(0, 0, 0, 0.836);
   
 }
+
+@media (max-width: 600px) {
+  .navs1 {
+    display: none;
+
+  
+
+  }
+
+}

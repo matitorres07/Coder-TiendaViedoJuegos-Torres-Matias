@@ -61,7 +61,7 @@ const ItemDetail = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="cardsind2det grid grid-cols-4 gap-4">
       {
         
         juegosCons.length ? ( 
