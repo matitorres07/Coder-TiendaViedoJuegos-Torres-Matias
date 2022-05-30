@@ -229,7 +229,9 @@ const Cart = () => {
               <div className="flex flex-col ... items-center ... justify-center ...">
               <img className=''  src="https://cdni.iconscout.com/illustration/free/thumb/empty-cart-4085814-3385483.png" />
               
-              <Link to={'/'}><button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Empezar a comprar!</button></Link>
+              
+              
+              <Link to={'/'}><a class="link" style={{color : '#A096FE',fontSize: '25px'}}>Empezar a comprar!</a></Link>
               </div>
               
               </div>
