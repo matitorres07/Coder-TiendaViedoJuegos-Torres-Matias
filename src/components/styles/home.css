@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
   }
   
   /* Style the button used to pause/play the video */
@@ -37,6 +38,13 @@
     color: black;
   }
 
-  .video-loop {
+  .videoTag{
+    min-height: 100vh;
     
+  }
+
+  @media (max-width: 600px) {
+    .videoTag {
+    display: none;
+    }
   }

@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
+
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 
@@ -34,6 +36,9 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
