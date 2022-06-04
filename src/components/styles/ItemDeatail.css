@@ -14,20 +14,7 @@
     justify-content: end;
 }
 
-@media (max-width: 600px) {
-    .cardsind {
-      display: flex;
-      flex-direction: column;
-      justify-content: center   ;
-      margin-top: 30px;
-    }
-    .cardsind2{
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center   ;
-
-    }}
 
 
 
