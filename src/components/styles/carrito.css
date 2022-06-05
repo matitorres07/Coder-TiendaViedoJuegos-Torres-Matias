@@ -1,0 +1,33 @@
+.divcarrito { color: #ffffff; font-family: 'consolas'; font-size: 30px; font-weight: 800; line-height: 72px; margin: 70px 0 0 24px; text-align: center;  }
+
+.cart-div {
+    background: black;
+    background-color: rgba(175, 175, 175, 0.233);
+    
+}
+
+@media (max-width: 600px) {
+    .cardcarrtio {
+      display: flex;
+      flex-direction: column;
+      justify-content: center   ;
+      margin-top: 30px;
+    }
+    .cardcarrito2{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center   ;
+
+    }
+    .divacamb{
+
+      width : 100%;
+
+    }
+  
+  }
+
+    .divacamb{
+      width : 100%;
+    }

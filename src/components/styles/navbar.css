@@ -1,0 +1,9 @@
+.prueba1 {
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .navs {
+      display: none;
+  
+    }}

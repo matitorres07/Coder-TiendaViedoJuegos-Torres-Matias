@@ -1,0 +1,20 @@
+.imagen-detalle {
+    width:  50vh;
+    height:  50vh;
+    object-fit: cover;
+    transition: transform .7s ease-in-out;
+    
+}
+
+.imagen-detalle:hover {
+    transform: rotate(360deg);
+  }
+
+.detalles {
+    justify-content: end;
+}
+
+
+
+
+

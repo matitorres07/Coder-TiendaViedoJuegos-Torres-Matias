@@ -1,0 +1,16 @@
+.nada {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 80px 50px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    color: white;
+    
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #767676, 
+      -1px 2px 1px #737272, 
+      -2px 4px 1px #767474, 
+      -3px 6px 1px #787777;
+}
